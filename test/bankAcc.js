@@ -24,7 +24,7 @@ describe('BankAccount', () => {
         it ('Should merge', () =>{
             let original = new BankAccount(100)
             let other = new BankAccount(200)
-            assert.strictEqual(300, original.merge(original,other))
+            assert.strictEqual(300, original.merge(other))
         })
     })
 
@@ -34,10 +34,11 @@ describe('BankAccount', () => {
             let other = new BankAccount(200)
             original.append (100)
             other.substract(30)
-            assert.strictEqual(370, original.merge(original,other))
-            assert.strictEqual([100, 30], original.historial_file() )
+            assert.strictEqual(370, original.merge(other))
+            assert.deepStrictEqual([100, 30], original.historial_file() )
         })
     })
+
 
     describe('#historial', () => {
         it('Should be the history', () => {

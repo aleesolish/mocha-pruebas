@@ -33,9 +33,9 @@ module.exports = class bankAcc{
   }
 
 
-  merge(original, other){
-    original.historial.concat(other.historial)
-    return (original.balance + other.balance)
+  merge(other){
+    this.historial = this.historial.concat(other.historial)
+    return (this.balance + other.balance)
 
   }
 
